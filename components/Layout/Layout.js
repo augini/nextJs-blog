@@ -46,7 +46,7 @@ export default function Layout({ children, home }) {
               </a>
             </Link>
             <h2 className={utilStyles.headingLg}>
-              <Link href="/">
+              <Link href="posts/first-post.js">
                 <a className={utilStyles.colorInherit}>{name}</a>
               </Link>
             </h2>
