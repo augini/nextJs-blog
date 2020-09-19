@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import Linking from 'next/link';
+import Link from 'next/link';
+import Date from '../components/Date/date';
 import Layout, { siteTitle } from '../components/Layout/Layout';
 import utilStyles from '../styles/utils.module.css';
 import Alert from '../components/Alert/Alert';
@@ -29,11 +30,13 @@ export default function Home({ json, allPostsData }) {
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              {title}
+              <Link href={`/posts/${id}`}>
+                <a>{title}</a>
+              </Link>
               <br />
-              {id}
-              <br />
-              {date}
+              <small className={utilStyles.lightText}>
+                <Date dateString={date} />
+              </small>
             </li>
           ))}
         </ul>
